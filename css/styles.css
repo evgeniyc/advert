@@ -1,0 +1,162 @@
+#body
+{
+	background: url(../images/vert.jpg) repeat-x, url(../images/horiz.jpg) repeat-y;
+	border-left: 1px dotted black;
+	border-right: 1px dotted black;
+	box-shadow: 0 0 2px black;
+}
+#header
+{
+	
+}
+#header h1
+{
+	padding-top: 15px;
+}
+#logo
+{
+	padding-left: 33px;
+}
+#title
+{
+	color: #00ACFF;
+	font-style: italic;
+	text-shadow: -1px 1px 2px black;
+}
+.panel-heading
+{
+	background-image: linear-gradient(to top, #7FFF00 0, white 100%) !important; 
+}
+.panel-title
+{
+	color: #48036f;
+	font-style: italic;
+	font-weight: bold;
+}
+nav ul
+{
+	
+}
+#main-menu ul li
+{
+	display: inline-block;
+	list-style: none;
+	float: right;
+	
+}
+#main-menu li.active > a
+{
+	color: black;
+}
+#main-menu a
+{
+	margin: 5px;
+	padding: 3px 10px;
+	border: 2px ridge black;
+	border-radius: 5px;
+	box-shadow: 0 0 2px black;
+	background: linear-gradient(to top, #48036f, white);
+	color: white;
+	
+}
+#main-menu a:hover
+{
+	color: red;
+	background: linear-gradient(to bottom, #48036f, white);
+	text-decoration: none;
+	border-style: groove;
+}
+#side-menu
+{
+	padding-top: 0;
+}
+section
+{
+	height: 500px;
+	overflow: visible;
+}
+#search
+{
+	float: right;
+}
+.panel
+{
+	box-shadow: -1px 1px 2px black;
+}
+.advert
+{
+	width: 192px;
+	height: 350px;
+	border: 2px ridge black;
+	border-radius: 5px;
+	box-shadow: 1px -1px 2px black;
+	float: left;
+	margin: 5px;
+}
+.advert_head
+{
+	height: 15%;
+	background: linear-gradient(to top, white, #00675C);
+	color: brown;
+	text-shadow: 0 0 2px white;
+	font-weight: bold;
+	font-style: italic;
+	padding: 5px;
+}
+.advert_body
+{
+	height: 70%;
+	padding: 5px;
+	
+}
+.advert_image
+{
+	height: 80%;
+}
+.advert_text
+{
+	height: 20%;
+	overflow: hidden;
+}
+.advert_footer
+{
+	height: 15%;
+	background: #FFCE73;
+	padding: 10px 5px 5px 5px;
+	color: red;
+	font-weight: bold;
+	text-align: center;
+}
+.advert-date
+{
+	color: white;
+	text-align: right;
+	text-shadow: 0 0 2px black;
+}
+footer
+{
+	height: 40px;
+	text-align: center;
+	background: #9F3ED5;
+	color: white;
+	font-style: italic;
+	
+}
+ul
+{
+	padding: 20px;
+}
+.slicknav_menu {
+	display:none;
+}
+
+@media screen and (max-width: 40em) {
+	/* #menu is the original menu */
+	#main-menu {
+		display:none;
+	}
+	
+	.slicknav_menu {
+		display:block;
+	}
+}
