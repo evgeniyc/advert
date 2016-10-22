@@ -19,11 +19,6 @@ $this->pageTitle=Yii::app()->name;
 					<div class="advert_head">Продам дом в Вольнянске</div>
 					<div class="advert_body">
 						<div class="advert_image"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/houses/'.$j.'.jpg','Изображение дом',array('width'=>'100%','height'=>'100%')); ?></div>
-						<div class="advert_text">
-							Продам дом в Вольянске по ул.Дегтярева. Дом расположен в живописном месте. Хорошая планировка.
-							Есть телефон, газ, горячая вода. Хорошие соседи.
-							Реальному покупателю скидка!
-						</div>
 					</div>
 					<div class="advert_footer">
 					<div class="advert-price">Цена: $20000</div>

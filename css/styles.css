@@ -23,15 +23,31 @@
 	font-style: italic;
 	text-shadow: -1px 1px 2px black;
 }
+#gerb
+{
+	text-align: center;
+}
 .panel-heading
 {
-	background-image: linear-gradient(to top, #7FFF00 0, white 100%) !important; 
+	background-image: linear-gradient(to top, #7FFF00 0, white 100%) !important;
+}
+.panel-heading form
+{
+	font-size: 0.9em;
+}
+.panel-heading form input[type=text]
+{
+	border-radius: 4px;
 }
 .panel-title
 {
 	color: #48036f;
 	font-style: italic;
 	font-weight: bold;
+}
+.panel-body
+{
+	background: #e8e8e8;
 }
 nav ul
 {
@@ -75,6 +91,10 @@ section
 	height: 500px;
 	overflow: visible;
 }
+#breadcrumbs a
+{
+	text-shadow: 0 0 2px white;
+}
 #search
 {
 	float: right;
@@ -86,7 +106,7 @@ section
 .advert
 {
 	width: 192px;
-	height: 350px;
+	height: 250px;
 	border: 2px ridge black;
 	border-radius: 5px;
 	box-shadow: 1px -1px 2px black;
@@ -95,7 +115,7 @@ section
 }
 .advert_head
 {
-	height: 15%;
+	height: 20%;
 	background: linear-gradient(to top, white, #00675C);
 	color: brown;
 	text-shadow: 0 0 2px white;
@@ -105,22 +125,21 @@ section
 }
 .advert_body
 {
-	height: 70%;
+	height: 60%;
 	padding: 5px;
 	
 }
 .advert_image
 {
-	height: 80%;
+	height: 100%;
 }
 .advert_text
 {
-	height: 20%;
-	overflow: hidden;
+	
 }
 .advert_footer
 {
-	height: 15%;
+	height: 20%;
 	background: #FFCE73;
 	padding: 10px 5px 5px 5px;
 	color: red;
@@ -144,7 +163,10 @@ footer
 }
 ul
 {
-	padding: 20px;
+	padding: 10px;
+	margin: 0;
+	overflow: auto;
+	
 }
 .slicknav_menu {
 	display:none;
