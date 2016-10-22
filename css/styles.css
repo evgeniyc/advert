@@ -13,6 +13,16 @@
 {
 	padding-top: 15px;
 }
+#reg
+{
+	position: relative;
+	float: right;
+	margin-top: -10px;
+}
+#reg a
+{
+	color: blue;
+}
 #logo
 {
 	padding-left: 33px;
@@ -34,6 +44,7 @@
 .panel-heading form
 {
 	font-size: 0.9em;
+	margin-top: -2px;
 }
 .panel-heading form input[type=text]
 {
@@ -64,7 +75,7 @@ nav ul
 {
 	color: black;
 }
-#main-menu a
+#main-menu a, #main-menu span
 {
 	margin: 5px;
 	padding: 3px 10px;
@@ -81,6 +92,19 @@ nav ul
 	background: linear-gradient(to bottom, #48036f, white);
 	text-decoration: none;
 	border-style: groove;
+}
+#main-menu li ul
+{
+	display: none;
+	position: absolute;
+	z-index: 2;
+	padding-left: 0;
+}
+#main-menu li ul li
+{
+	clear: both;
+	float: left;
+	margin-bottom: 10px;
 }
 #side-menu
 {

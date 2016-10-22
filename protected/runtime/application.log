@@ -1283,3 +1283,42 @@ Stack trace:
 REQUEST_URI=/yii/voln-advert/index.php/advert/create
 HTTP_REFERER=http://localhost/yii/voln-advert/index.php/site/login
 ---
+2016/10/22 22:14:50 [error] [php] Undefined variable: j (C:\Apache2.2\htdocs\yii\voln-advert\protected\views\site\advert.php:5)
+Stack trace:
+#0 C:\Apache2.2\htdocs\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\Apache2.2\htdocs\yii\voln-advert\protected\views\site\index.php(17): SiteController->renderPartial()
+#2 C:\Apache2.2\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\Apache2.2\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\Apache2.2\htdocs\yii\framework\web\CController.php(869): SiteController->renderFile()
+#5 C:\Apache2.2\htdocs\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#6 C:\Apache2.2\htdocs\yii\voln-advert\protected\controllers\SiteController.php(32): SiteController->render()
+#7 C:\Apache2.2\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\Apache2.2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\Apache2.2\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\Apache2.2\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\Apache2.2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\Apache2.2\htdocs\yii\voln-advert\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/voln-advert/index.php
+in C:\Apache2.2\htdocs\yii\voln-advert\protected\views\site\advert.php (5)
+in C:\Apache2.2\htdocs\yii\voln-advert\protected\views\site\index.php (17)
+in C:\Apache2.2\htdocs\yii\voln-advert\protected\controllers\SiteController.php (32)
+2016/10/23 00:27:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "product/index".' in C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('product/index')
+#1 C:\Apache2.2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Apache2.2\htdocs\yii\voln-advert\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/voln-advert/index.php/product/index
+HTTP_REFERER=http://localhost/yii/voln-advert/index.php/site/index
+---
+2016/10/23 00:28:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "product/index".' in C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('product/index')
+#1 C:\Apache2.2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Apache2.2\htdocs\yii\voln-advert\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/voln-advert/index.php/product/index
+HTTP_REFERER=http://localhost/yii/voln-advert/index.php/site/index
+---

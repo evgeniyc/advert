@@ -14,6 +14,7 @@
  */
 class Advert extends CActiveRecord
 {
+	public $uphoto;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -60,7 +61,7 @@ class Advert extends CActiveRecord
 			'id' => 'Идентификатор',
 			'title' => 'Заголовок',
 			'content' => 'Содержание',
-			'photo' => 'Фото',
+			'uphoto' => 'Фото',
 			'date' => 'Дата публикации',
 			'price' => 'Цена',
 			'category' => 'Категория',

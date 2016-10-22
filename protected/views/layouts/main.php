@@ -33,7 +33,15 @@
 		<header>
 			<div id="header" class="row">
 				<div id="logo" class="col-md-2 col-xs-2"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/logo.png','Логотип'); ?></div>
-				<div id="title"class="col-md-8 col-xs-10"><h1><?php echo CHtml::encode(Yii::app()->name); ?></h1></div>
+				<div id="title"class="col-md-8 col-xs-10">
+					<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
+					<?php 	if(Yii::app()->user->isGuest): 
+								echo '<div id="reg">';
+								echo CHtml::link('Зарегистрироваться');
+								echo '</div>';
+							endif;
+					?>
+				</div>
 				<div id="gerb" class="col-md-2"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/vilniansk.gif','Герб',array('width'=>'70')); ?></div>
 			</div>
 		</header>
@@ -41,7 +49,10 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Выйти ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Мой кабинет', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Мой кабинет', 'itemOptions'=>array('class'=>'slide'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
+					array('label'=>'Добавить объявление', 'url'=>array('advert/create')),
+					array('label'=>'Посетить', 'url'=>array('advert/admin')),
+				)),
 				array('label'=>'Войти', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Контакты', 'url'=>array('/site/contact')),
 				array('label'=>'О нас', 'url'=>array('/site/page', 'view'=>'about')),
@@ -68,7 +79,17 @@
 						duration: 300,
 						prependTo:'section'
 					});
-				});"); ?>
+				});"
+			);
+			Yii::app()->clientScript->registerScript('slide',"
+				$(function(){
+					$('.slide').hover(function(){
+						$('.slide ul').slideToggle('slow', function() {});
+					});
+				})"
+			);
+			
+	?>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<!-- Latest compiled and minified JavaScript -->
 	
