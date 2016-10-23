@@ -8,6 +8,7 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'advert-form',
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -29,6 +30,12 @@
 		<?php echo $form->labelEx($model,'content'); ?>
 		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'content'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'uphoto'); ?>
+		<?php echo $form->fileField($model,'uphoto'); ?>
+		<?php echo $form->error($model,'uphoto'); ?>
 	</div>
 
 	<div class="row">

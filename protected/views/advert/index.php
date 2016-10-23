@@ -12,9 +12,20 @@ $this->menu=array(
 );
 ?>
 
-<h1>Adverts</h1>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Объявления:
+			<form id="search" name="search"><input type="text" size=25><input type="submit" value="Поиск"></form>
+		</h3>
+	</div>
+	<div class="panel-body">
+		<?php $this->widget('zii.widgets.CListView', array(
+			'dataProvider'=>$dataProvider,
+			'itemView'=>'advert',
+			)); 
+		?>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+	</div>
+</div>
+

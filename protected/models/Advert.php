@@ -11,6 +11,7 @@
  * @property string $date
  * @property string $price
  * @property integer $category
+ * @property string $author
  */
 class Advert extends CActiveRecord
 {
@@ -35,6 +36,7 @@ class Advert extends CActiveRecord
 			array('photo, category', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>64),
 			array('price', 'length', 'max'=>12),
+			array('uphoto', 'file', 'types'=>'jpg, gif, png', 'maxSize' => 1048576),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, content, photo, date, price, category', 'safe', 'on'=>'search'),
@@ -49,6 +51,7 @@ class Advert extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			 'owner'=>array(self::BELONGS_TO, 'User', 'author'),
 		);
 	}
 
@@ -66,6 +69,18 @@ class Advert extends CActiveRecord
 			'price' => 'Цена',
 			'category' => 'Категория',
 		);
+	}
+	
+	public function beforeSave()
+	{
+		if($this->isNewRecord)
+		{
+			$this->date = date("Y-m-d");
+			$this->author = Yii::app()->user->id;
+		}
+		
+		
+		return parent::beforeSave();
 	}
 
 	/**

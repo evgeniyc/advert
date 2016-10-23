@@ -1,14 +1,20 @@
 <?php
 
-class AdvertController extends Controller
+class UserController extends Controller
 {
+	/**
+	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 */
+	public $layout='//layouts/column2';
+
 	/**
 	 * @return array action filters
 	 */
 	public function filters()
 	{
 		return array(
-			//'accessControl', // perform access control for CRUD operations
+			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -56,35 +62,21 @@ class AdvertController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Advert;
+		$model=new User('create');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Advert']))
+		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['Advert'];
-			$model->uphoto=CUploadedFile::getInstance($model,'uphoto');
-			if(!empty($model->uphoto)) $model->photo=1;
+			$model->attributes=$_POST['User'];
 			if($model->save())
-			{
-				if($model->photo)
-				{
-					$names=explode('.',$model->uphoto->name);
-					$count=count($names);
-					$count--;
-					$type=$names[$count];
-					unset($names);
-					$names[]=Yii::app()->user->id;
-					$names[]=$type;
-					$name=implode('.',$names);
-					$path=Yii::getPathOfAlias('webroot').'/images/uploads/'.$name;
-					$model->uphoto->saveAs($path);
-				}
 				$this->redirect(array('view','id'=>$model->id));
-			}
 		}
-		$this->render('create',array('model'=>$model));
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -99,28 +91,11 @@ class AdvertController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Advert']))
+		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['Advert'];
-			$model->uphoto=CUploadedFile::getInstance($model,'uphoto');
-			if(!empty($model->uphoto) && $model->photo==null) $model->photo=1;
+			$model->attributes=$_POST['User'];
 			if($model->save())
-			{
-				if($model->photo)
-				{
-					$names=explode('.',$model->uphoto->name);
-					$count=count($names);
-					$count--;
-					$type=$names[$count];
-					unset($names);
-					$names[]=Yii::app()->user->id;
-					$names[]=$type;
-					$name=implode('.',$names);
-					$path=Yii::getPathOfAlias('webroot').'/images/uploads/'.$name;
-					$model->uphoto->saveAs($path);
-				}
 				$this->redirect(array('view','id'=>$model->id));
-			}
 		}
 
 		$this->render('update',array(
@@ -147,7 +122,7 @@ class AdvertController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Advert');
+		$dataProvider=new CActiveDataProvider('User');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -158,10 +133,10 @@ class AdvertController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Advert('search');
+		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Advert']))
-			$model->attributes=$_GET['Advert'];
+		if(isset($_GET['User']))
+			$model->attributes=$_GET['User'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -172,12 +147,12 @@ class AdvertController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Advert the loaded model
+	 * @return User the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Advert::model()->findByPk($id);
+		$model=User::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -185,11 +160,11 @@ class AdvertController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Advert $model the model to be validated
+	 * @param User $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='advert-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

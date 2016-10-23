@@ -31,7 +31,8 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, passw, name, phone, email, reg_date, role', 'required'),
+			array('login, passw, name, phone, email', 'required', 'on'=>'create'),
+			array('login, passw', 'required', 'on'=>'login'),
 			array('role', 'numerical', 'integerOnly'=>true),
 			array('login, name', 'length', 'max'=>12),
 			array('passw', 'length', 'max'=>32),
@@ -70,7 +71,16 @@ class User extends CActiveRecord
 			'role' => 'Роль',
 		);
 	}
-
+	public function beforeSave()
+	{
+		if($this->isNewRecord)
+		{
+			$this->reg_date=date("Y-m-d");
+			$this->passw=md5($this->passw);
+			return parent::beforeSave();
+		}
+			
+	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *

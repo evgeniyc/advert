@@ -56,7 +56,7 @@
 				array('label'=>'Войти', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Контакты', 'url'=>array('/site/contact')),
 				array('label'=>'О нас', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Главная', 'url'=>array('/site/index')),
+				array('label'=>'Главная', 'url'=>array('/advert/index')),
 			),
 		)); ?>
 	</div><!-- mainmenu -->
