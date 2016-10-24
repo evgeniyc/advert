@@ -44,6 +44,7 @@ return array(
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+			'showScriptName'=>false,
 			'rules'=>array(
 				'gii'=>'gii',
 				'gii/<controller:\w+>'=>'gii/<controller>',
