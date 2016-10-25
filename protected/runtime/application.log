@@ -1626,3 +1626,138 @@ REQUEST_URI=/yii/advert/site/index
 in C:\wamp\www\yii\advert\protected\views\site\advert.php (3)
 in C:\wamp\www\yii\advert\protected\views\site\index.php (17)
 in C:\wamp\www\yii\advert\protected\controllers\SiteController.php (32)
+2016/10/25 11:08:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Некорректный запрос.' in C:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#5 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/create')
+#6 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/yii/advert/images/create
+---
+2016/10/25 11:08:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "users/create".' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/advert/users/create
+---
+2016/10/25 12:00:03 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Advert.author".' in C:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('author', '1')
+#1 C:\wamp\www\yii\advert\protected\models\Advert.php(79): CActiveRecord->__set('author', '1')
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1074): Advert->beforeSave()
+#3 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#4 C:\wamp\www\yii\advert\protected\controllers\AdvertController.php(69): CActiveRecord->save()
+#5 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdvertController->actionCreate()
+#6 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#11 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('advert/create')
+#12 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii/advert/advert/create
+HTTP_REFERER=http://localhost/yii/advert/advert/create
+---
+2016/10/25 12:10:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "image/create".' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('image/create')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/advert/image/create
+---
+2016/10/25 12:11:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Некорректный запрос.' in C:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#5 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/create')
+#6 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/yii/advert/images/create
+---
+2016/10/25 12:12:25 [error] [php] Undefined variable: max (C:\wamp\www\yii\advert\protected\controllers\ImagesController.php:82)
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ImagesController->runAction()
+#3 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#4 C:\wamp\www\yii\framework\web\CController.php(265): ImagesController->runActionWithFilters()
+#5 C:\wamp\www\yii\framework\web\CWebApplication.php(282): ImagesController->run()
+#6 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\wamp\www\yii\advert\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/advert/images/create/1
+in C:\wamp\www\yii\advert\protected\controllers\ImagesController.php (82)
+in C:\wamp\www\yii\advert\index.php (13)
+2016/10/25 12:32:20 [warning] [application] Не удалось присвоить небезопасный атрибут "photo" класса "Images".
+in C:\wamp\www\yii\advert\protected\controllers\ImagesController.php (72)
+in C:\wamp\www\yii\advert\index.php (13)
+2016/10/25 12:32:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "view".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/view')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/1
+HTTP_REFERER=http://localhost/yii/advert/images/create/1
+---
+2016/10/25 12:36:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Некорректный запрос.' in C:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#5 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('advert/update')
+#6 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/yii/advert/advert/update
+---
+2016/10/25 12:44:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/2.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/index
+---
+2016/10/25 13:00:33 [error] [php] Undefined variable: model (C:\wamp\www\yii\advert\protected\views\site\advert.php:3)
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\wamp\www\yii\advert\protected\views\site\index.php(17): SiteController->renderPartial()
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 C:\wamp\www\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\wamp\www\yii\framework\web\CController.php(869): SiteController->renderFile()
+#5 C:\wamp\www\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#6 C:\wamp\www\yii\advert\protected\controllers\SiteController.php(32): SiteController->render()
+#7 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\wamp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\wamp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\wamp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\wamp\www\yii\advert\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/advert/site/index
+in C:\wamp\www\yii\advert\protected\views\site\advert.php (3)
+in C:\wamp\www\yii\advert\protected\views\site\index.php (17)
+in C:\wamp\www\yii\advert\protected\controllers\SiteController.php (32)

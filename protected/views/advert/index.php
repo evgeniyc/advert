@@ -2,10 +2,6 @@
 /* @var $this AdvertController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Adverts',
-);
-
 $this->menu=array(
 	array('label'=>'Create Advert', 'url'=>array('create')),
 	array('label'=>'Manage Advert', 'url'=>array('admin')),
@@ -22,7 +18,7 @@ $this->menu=array(
 	<div class="panel-body">
 		<?php $this->widget('zii.widgets.CListView', array(
 			'dataProvider'=>$dataProvider,
-			'itemView'=>'advert',
+			'itemView'=>'_advert',
 			)); 
 		?>
 

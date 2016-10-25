@@ -75,7 +75,7 @@ class AdvertController extends Controller
 					$count--;
 					$type=$names[$count];
 					unset($names);
-					$names[]=Yii::app()->user->id;
+					$names[]=$model->id;
 					$names[]=$type;
 					$name=implode('.',$names);
 					$path=Yii::getPathOfAlias('webroot').'/images/uploads/'.$name;

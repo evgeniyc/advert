@@ -1,27 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "advert".
+ * This is the model class for table "images".
  *
- * The followings are the available columns in table 'advert':
+ * The followings are the available columns in table 'images':
  * @property string $id
- * @property string $title
- * @property string $content
- * @property integer $photo
- * @property string $date
- * @property string $price
- * @property integer $category
- * @property string $author
+ * @property integer $num
+ * @property string $advert_id
  */
-class Advert extends CActiveRecord
+class Images extends CActiveRecord
 {
-	public $uphoto;
+	public $photo;
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'advert';
+		return 'images';
 	}
 
 	/**
@@ -32,14 +27,12 @@ class Advert extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content, price, category', 'required'),
-			array('photo, category, author', 'numerical', 'integerOnly'=>true),
-			array('title', 'length', 'max'=>64),
-			array('price', 'length', 'max'=>12),
-			array('uphoto', 'file', 'types'=>'jpg, gif, png', 'maxSize' => 1048576),
+			array('num', 'numerical', 'integerOnly'=>true),
+			array('advert_id', 'length', 'max'=>10),
+			array('photo', 'file', 'types'=>'jpg, gif, png', 'maxSize' => 1048576),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, content, photo, date, price, category', 'safe', 'on'=>'search'),
+			array('id, num, advert_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,7 +44,6 @@ class Advert extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			 'owner'=>array(self::BELONGS_TO, 'User', 'author'),
 		);
 	}
 
@@ -62,26 +54,10 @@ class Advert extends CActiveRecord
 	{
 		return array(
 			'id' => 'Идентификатор',
-			'title' => 'Заголовок',
-			'content' => 'Содержание',
-			'uphoto' => 'Фото',
-			'date' => 'Дата публикации',
-			'price' => 'Цена',
-			'category' => 'Категория',
-			'author' => 'Автор',
+			'num' => 'Номер',
+			'advert_id' => 'Объявление',
+			'photo' => 'Фото',
 		);
-	}
-	
-	public function beforeSave()
-	{
-		if($this->isNewRecord)
-		{
-			$this->date = date("Y-m-d");
-			$this->author = Yii::app()->user->id;
-		}
-		
-		
-		return parent::beforeSave();
 	}
 
 	/**
@@ -103,12 +79,8 @@ class Advert extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('content',$this->content,true);
-		$criteria->compare('photo',$this->photo);
-		$criteria->compare('date',$this->date,true);
-		$criteria->compare('price',$this->price,true);
-		$criteria->compare('category',$this->category);
+		$criteria->compare('num',$this->num);
+		$criteria->compare('advert_id',$this->advert_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -119,7 +91,7 @@ class Advert extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Advert the static model class
+	 * @return Images the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
