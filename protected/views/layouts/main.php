@@ -49,7 +49,7 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Выйти ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Мой кабинет', 'itemOptions'=>array('class'=>'slide'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
+				array('label'=>'Мой кабинет', 'itemOptions'=>array('class'=>'drops'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
 					array('label'=>'Добавить объявление', 'url'=>array('advert/create')),
 					array('label'=>'Посетить', 'url'=>array('advert/admin')),
 				)),
@@ -81,10 +81,10 @@
 					});
 				});"
 			);
-			Yii::app()->clientScript->registerScript('slide',"
+			Yii::app()->clientScript->registerScript('drops',"
 				$(function(){
-					$('.slide').hover(function(){
-						$('.slide ul').slideToggle('slow', function() {});
+					$('.drops').hover(function(){
+						$('.drops ul').slideToggle('slow', function() {});
 					});
 				})"
 			);

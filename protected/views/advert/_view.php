@@ -4,7 +4,15 @@
 ?>
 
 <div class="view">
-
+	<div id="photo">
+		<?php echo CHtml::image(Yii::app()->getPahtOfAlias('webroot').'/images/uploads/'.$data->id.'.jpg', 'Изображение'); ?>
+	</div>
+	<?php foreach($data->imgs as $img): ?>
+		<div class="lphotos">
+			<?php echo CHtml::image(Yii::app()->getPahtOfAlias('webroot').'/images/uploads/'.$img->advert_id.'_'$img->num.'.jpg', 'Изображение'); ?>
+		</div>
+	<?php endforeach; ?>	
+		
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />

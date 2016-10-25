@@ -90,7 +90,7 @@ class ImagesController extends Controller
 					$count--;
 					$type=$names[$count];
 					unset($names);
-					$names[]=Yii::app()->user->id.'_'.$model->num;
+					$names[]=$id.'_'.$model->num;
 					$names[]=$type;
 					$name=implode('.',$names);
 					$path=Yii::getPathOfAlias('webroot').'/images/uploads/'.$name;

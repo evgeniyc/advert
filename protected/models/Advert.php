@@ -52,6 +52,7 @@ class Advert extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			 'owner'=>array(self::BELONGS_TO, 'User', 'author'),
+			 'imgs'=>array(self::HAS_MANY, 'Images', 'advert_id'),
 		);
 	}
 
