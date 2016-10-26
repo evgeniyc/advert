@@ -28,7 +28,19 @@
 								<h3 class="panel-title">Самые свежие:</h3>
 							</div>
 							<div class="panel-body">
-								<?php require 'carousel.php' ?>
+								<!-- 2. Add images to <div class="fotorama"></div>. -->
+								<div id="vidget-img" class="fotorama"
+									data-width="100%"
+									data-autoplay="true"
+									data-nav="false">
+									<?php 	for($i=1; $i<11; $i++):
+												echo CHtml::image(Yii::app()->baseUrl.'/images/uploads/'.rand(1,10).'.jpg', 'Изображение');
+											endfor; 
+									?>
+								  <!--<img src="http://s.fotorama.io/1.jpg">
+								  <img src="http://s.fotorama.io/2.jpg"> -->
+								</div>
+								<!-- 3. Enjoy! -->
 							</div>
 						</div>
 					</aside>
@@ -44,3 +56,6 @@
 		</section>
 		<div class="clearfix"></div>
 <?php $this->endContent(); ?>
+<!-- fotorama.css & fotorama.js. -->
+<?php 	Yii::app()->clientScript->registerCssFile('http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css');
+		Yii::app()->clientScript->registerScriptFile('http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js'); ?>

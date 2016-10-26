@@ -18,7 +18,11 @@ $this->menu=array(
 	<div class="panel-body">
 		<?php $this->widget('zii.widgets.CListView', array(
 			'dataProvider'=>$dataProvider,
-			'itemView'=>'_advert',
+			'itemView'=>'_view',
+			'sortableAttributes'=>array(
+				'price',
+				'date',
+			),
 			)); 
 		?>
 

@@ -79,6 +79,12 @@ class ImagesController extends Controller
 					if($record->num > $max)
 						$max=$record->num;
 			}
+			/*if(!$max)
+			{
+				$parent = Advert::model()->findByPk($id);
+				$parent->photo = 2;
+				$parent->save(false, 'photo');
+			}*/
 			$model->num = ++$max;	
 			$model->photo=CUploadedFile::getInstance($model,'photo');
 			if($model->save())

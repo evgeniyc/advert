@@ -3,43 +3,22 @@
 /* @var $data Advert */
 ?>
 
-<div class="view">
-	<div id="photo">
-		<?php echo CHtml::image(Yii::app()->getPahtOfAlias('webroot').'/images/uploads/'.$data->id.'.jpg', 'Изображение'); ?>
-	</div>
-	<?php foreach($data->imgs as $img): ?>
-		<div class="lphotos">
-			<?php echo CHtml::image(Yii::app()->getPahtOfAlias('webroot').'/images/uploads/'.$img->advert_id.'_'$img->num.'.jpg', 'Изображение'); ?>
+<a href="<?php echo $this->createUrl('advert/view',array('id'=>$data->id)); ?>">
+	<div class="advert">
+		<div class="advert_head"><?php echo $data->title; ?></div>
+		<div class="advert_body">
+			<div class="advert_image">
+				<?php 
+					if($data->photo)
+						echo CHtml::image(Yii::app()->baseUrl.'/images/uploads/'.$data->id.'.jpg','Изображение дом',array('width'=>'100%','height'=>'100%')); 
+					else 
+						echo CHtml::image(Yii::app()->baseUrl.'/images/nophoto.jpg','Изображение дом',array('width'=>'100%','height'=>'100%'));
+				?>
+			</div>
 		</div>
-	<?php endforeach; ?>	
-		
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
-	<?php echo CHtml::encode($data->title); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('content')); ?>:</b>
-	<?php echo CHtml::encode($data->content); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('photo')); ?>:</b>
-	<?php echo CHtml::encode($data->photo); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
-	<?php echo CHtml::encode($data->date); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('price')); ?>:</b>
-	<?php echo CHtml::encode($data->price); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('category')); ?>:</b>
-	<?php echo CHtml::encode($data->category); ?>
-	<br />
-
-
-</div>
+		<div class="advert_footer">
+		<div class="advert-price">Цена: <?php echo $data->price; ?>$</div>
+		<div class="advert-date"><?php echo $data->date; ?></div>
+		</div>
+	</div>
+</a>
