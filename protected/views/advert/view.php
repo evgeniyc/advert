@@ -31,8 +31,8 @@ $this->menu=array(
 					data-width="350"
 					data-nav="thumbs"
 					data-allowfullscreen="true">
-					<?php 	if($data->photo)
-								echo CHtml::image(Yii::app()->baseUrl.'/images/uploads/'.$data->id.'.jpg','Изображение дом',array('width'=>'100%','height'=>'100%')); 
+					<?php 	if($model->photo)
+								echo CHtml::image(Yii::app()->baseUrl.'/images/uploads/'.$model->id.'.jpg','Изображение дом',array('width'=>'100%','height'=>'100%')); 
 							else 
 								echo CHtml::image(Yii::app()->baseUrl.'/images/nophoto.jpg','Изображение дом',array('width'=>'100%','height'=>'100%'));
 							foreach($model->imgs as $img):
@@ -58,6 +58,6 @@ $this->menu=array(
 			</div>
 		</div>
 	</div>
-
+</div>
 
 	

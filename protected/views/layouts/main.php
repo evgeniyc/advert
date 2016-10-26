@@ -42,7 +42,7 @@
 							endif;
 					?>
 				</div>
-				<div id="gerb" class="col-md-2"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/vilniansk.gif','Герб',array('width'=>'70')); ?></div>
+				<div id="gerb" class="col-md-2"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/vgerb.jpg','Герб',array('width'=>'70')); ?></div>
 			</div>
 		</header>
 		<div id="main-menu">
