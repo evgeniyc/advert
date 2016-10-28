@@ -10,17 +10,10 @@
 								<h3 class="panel-title">Разделы:</h3>
 							</div>
 							<div class="panel-body">
-								<ul id="side-menu">
-									<li><a href="#">Недвижимость</a></li>
-									<li><a href="#">Электроника</a></li>
-									<li><a href="#">Техника</a></li>
-									<li><a href="#">Общие объявления</a></li> 
-									<li><a href="#">Организационные</a></li>
-									<li><a href="#">Реклама</a></li> 
-									<li><a href="#">События</a></li>
-									<li><a href="#">Общая информация</a></li>
-									<li><a href="#">Галерея</a></li> 
-								</ul>
+								<?php $this->widget('zii.widgets.CMenu',array(
+									'items'=>$this->menu,
+									'htmlOptions'=>array('id'=>'side-menu'),
+								)); ?>
 							</div>
 						</div>
 						<div id="popular" class="panel panel-primary">

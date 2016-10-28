@@ -3,8 +3,8 @@
 /* @var $model Advert */
 
 $this->breadcrumbs=array(
-	'Adverts'=>array('index'),
-	'Manage',
+	'Объявления'=>array('index'),
+	'Мой кабинет',
 );
 
 $this->menu=array(
@@ -44,8 +44,7 @@ $('.search-form form').submit(function(){
 				array(
 					'name'=>'photo',
 					'type'=>'image',
-					'value'=>'Yii::app()->baseUrl."/images/uploads/".$data->id.".jpg"',
-					'htmlOptions'=>array('width'=>'100px'),
+					'value'=>'CHtml::image(Yii::app()->baseUrl."/images/uploads/$data->id.jpg","Изображение",array("style"=>"width:150px"))',
 				),
 				'date',
 				'price',

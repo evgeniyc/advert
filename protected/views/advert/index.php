@@ -2,10 +2,17 @@
 /* @var $this AdvertController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->menu=array(
-	array('label'=>'Create Advert', 'url'=>array('create')),
-	array('label'=>'Manage Advert', 'url'=>array('admin')),
-);
+$this->menu = array(
+		array('label'=>'Недвижимость', 'url'=>array('/site/index')),
+		array('label'=>'Электроника', 'url'=>array('/site/index')),
+		array('label'=>'Техника', 'url'=>array('/site/index')),
+		array('label'=>'Общие объявления', 'url'=>array('/site/index')),
+		array('label'=>'Организационные', 'url'=>array('/site/index')),
+		array('label'=>'Реклама', 'url'=>array('/site/index')),
+		array('label'=>'События', 'url'=>array('/site/index')),
+		array('label'=>'Общая информация', 'url'=>array('/site/index')),
+		array('label'=>'Галерея', 'url'=>array('/site/index')),
+	);
 ?>
 
 <div class="panel panel-primary">

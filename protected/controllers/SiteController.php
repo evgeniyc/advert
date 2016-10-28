@@ -2,6 +2,17 @@
 
 class SiteController extends Controller
 {
+	public $menu = array(
+		array('label'=>'Недвижимость', 'url'=>array('/site/index')),
+		array('label'=>'Электроника', 'url'=>array('/site/index')),
+		array('label'=>'Техника', 'url'=>array('/site/index')),
+		array('label'=>'Общие объявления', 'url'=>array('/site/index')),
+		array('label'=>'Организационные', 'url'=>array('/site/index')),
+		array('label'=>'Реклама', 'url'=>array('/site/index')),
+		array('label'=>'События', 'url'=>array('/site/index')),
+		array('label'=>'Общая информация', 'url'=>array('/site/index')),
+		array('label'=>'Галерея', 'url'=>array('/site/index')),
+	);
 	/**
 	 * Declares class-based actions.
 	 */
