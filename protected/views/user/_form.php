@@ -39,7 +39,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'phone'); ?>
-		<?php echo $form->textField($model,'phone',array('size'=>18,'maxlength'=>18)); ?>
+		<?php
+			$this->widget('CMaskedTextField', array(
+			'model' => $model,
+			'attribute' => 'phone',
+			'mask' => '(099)999-99-99',
+			'htmlOptions' => array('size' => 11)
+			));
+		?>
 		<?php echo $form->error($model,'phone'); ?>
 	</div>
 

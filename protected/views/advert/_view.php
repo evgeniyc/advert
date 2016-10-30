@@ -18,7 +18,7 @@
 		</div>
 		<div class="advert_footer">
 		<div class="advert-price">Цена: <?php echo $data->price; ?>$</div>
-		<div class="advert-date"><?php echo $data->date; ?></div>
+		<div class="advert-date"><?php echo $this->datum($data->date); ?></div>
 		</div>
 	</div>
 </a>

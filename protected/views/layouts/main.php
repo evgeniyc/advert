@@ -32,8 +32,12 @@
 	<div id="body" class="container">
 		<header>
 			<div id="header" class="row">
-				<div id="logo" class="col-md-2 col-xs-2"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/logo.png','Логотип'); ?></div>
-				<div id="title"class="col-md-8 col-xs-10">
+				<div id="logo" class="col-md-2 col-xs-6">
+					<div id="logo-left" class="pull-left"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/logo.png','Логотип'); ?></div>
+					<div id="logo-right" class="hidden-lg"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/road.jpg','Логотип'); ?></div>
+				</div>
+				<div id="gerb" class="col-md-2 col-md-push-8 col-xs-6"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/vgerb.jpg','Герб',array('width'=>'70')); ?></div>
+				<div id="title"class="col-md-8 col-md-pull-2">
 					<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
 					<?php 	if(Yii::app()->user->isGuest): 
 								echo '<div id="reg">';
@@ -42,7 +46,6 @@
 							endif;
 					?>
 				</div>
-				<div id="gerb" class="col-md-2"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/vgerb.jpg','Герб',array('width'=>'70')); ?></div>
 			</div>
 		</header>
 		<div id="main-menu">
@@ -67,7 +70,7 @@
 	<?php endif?>
 
 	<?php echo $content; ?>
-		<footer>Бесплатные объявления Вольнянска<br>&#169;Webmake 2016</footer>
+		<footer>Бесплатные объявления Вольнянска<br>&#169;The_Webmake 2016</footer>
 	</div><!--container-->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -103,10 +103,10 @@ class AdvertController extends Controller
 		{
 			$model->attributes=$_POST['Advert'];
 			$model->uphoto=CUploadedFile::getInstance($model,'uphoto');
-			if(!empty($model->uphoto) && $model->photo==null) $model->photo=1;
+			if(!empty($model->uphoto)) $model->photo=1;
 			if($model->save())
 			{
-				if($model->photo)
+				if($model->uphoto)
 				{
 					$names=explode('.',$model->uphoto->name);
 					$count=count($names);
@@ -160,6 +160,7 @@ class AdvertController extends Controller
 	{
 		$model=new Advert('search');
 		$model->unsetAttributes();  // clear any default values
+		$model->author = Yii::app()->user->id;
 		if(isset($_GET['Advert']))
 			$model->attributes=$_GET['Advert'];
 
@@ -194,5 +195,14 @@ class AdvertController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	protected function datum($dat){
+		$old_date=explode('-',$dat);
+		$i=$old_date[0];
+		$j=$old_date[2];
+		$old_date[0]=$j;
+		$old_date[2]=$i;
+		$new_date=implode('.',$old_date);
+		return $new_date;
 	}
 }

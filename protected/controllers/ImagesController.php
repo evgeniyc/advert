@@ -63,7 +63,7 @@ class ImagesController extends Controller
 	public function actionCreate($id)
 	{
 		$model=new Images;
-
+		$model->advert_id = $id;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -102,7 +102,8 @@ class ImagesController extends Controller
 					$path=Yii::getPathOfAlias('webroot').'/images/uploads/'.$name;
 					$model->photo->saveAs($path);
 				}
-				$this->redirect(array('view','id'=>$model->id));
+				Yii::app()->user->setFlash('addImg','Изображение успешно добалено.');
+				$this->redirect(array('create','id'=>$model->advert_id));
 			}
 				
 		}
