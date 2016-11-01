@@ -56,7 +56,7 @@ class AdvertController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Advert;
+		$model=new Advert('create');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);

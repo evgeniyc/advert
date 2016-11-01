@@ -147,3 +147,23 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/yii/advert/site/auth
 ---
+2016/11/01 23:04:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "auth".' in C:\Apache2.2\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Apache2.2\htdocs\yii\framework\web\CController.php(270): CController->missingAction('auth')
+#1 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('auth')
+#2 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/auth')
+#3 C:\Apache2.2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Apache2.2\htdocs\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/site/auth
+---
+2016/11/01 23:45:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "auth".' in C:\Apache2.2\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Apache2.2\htdocs\yii\framework\web\CController.php(270): CController->missingAction('auth')
+#1 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('auth')
+#2 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/auth')
+#3 C:\Apache2.2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Apache2.2\htdocs\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/site/auth
+---

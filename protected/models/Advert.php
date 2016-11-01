@@ -9,7 +9,7 @@
  * @property string $content
  * @property integer $photo
  * @property string $date
- * @property string $price
+ * @property integer $price
  * @property integer $category
  * @property string $author
  */
@@ -36,11 +36,13 @@ class Advert extends CActiveRecord
 			array('content','filter','filter'=>array($obj=new CHtmlPurifier(),'purify')),
 			array('photo, category, author', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>64),
+			array('price','numerical', 'integerOnly'=>true),
 			array('price', 'length', 'max'=>12),
 			array('uphoto', 'file', 'types'=>'jpg, gif, png', 'maxSize' => 1048576, 'allowEmpty'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, content, photo, date, price, category, author', 'safe', 'on'=>'search'),
+			array('id, title, date, price, category, author', 'safe', 'on'=>'search'),
+			array('title, content, price, category', 'safe', 'on'=>'create'),
 		);
 	}
 
