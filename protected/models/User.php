@@ -77,9 +77,11 @@ class User extends CActiveRecord
 		{
 			$this->reg_date=date("Y-m-d");
 			$this->passw=md5($this->passw);
-			return parent::beforeSave();
+			$this->role=1;
 		}
-			
+		if($this->role === 1)
+			$this->role = 2;
+		return parent::beforeSave();
 	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

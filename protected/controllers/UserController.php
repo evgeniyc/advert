@@ -71,7 +71,13 @@ class UserController extends Controller
 		{
 			$model->attributes=$_POST['User'];
 			if($model->save())
+			{
+				$auth = Yii::app()->authManager;
+				$role = $this->urole($model->role);
+				$auth->assign($role, $model->id);
 				$this->redirect(array('view','id'=>$model->id));
+			}
+				
 		}
 
 		$this->render('create',array(
@@ -93,9 +99,26 @@ class UserController extends Controller
 
 		if(isset($_POST['User']))
 		{
+			$auth = Yii::app()->authManager;
+			$auth_flag = false;
+			if($model->role != $_POST['User']['role'])
+			{
+				$auth_flag = true;
+				$role = $this->urole($model->role);
+				$auth->revoke($role,$model->id);
+			}
+			
+			
 			$model->attributes=$_POST['User'];
 			if($model->save())
+			{
+				if($auth_flag)
+				{
+					$role = $this->urole($model->role);
+					$auth->assign($role, $model->id);
+				}
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
@@ -169,5 +192,17 @@ class UserController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	protected function urole($role)
+	{
+		switch($role)
+			{
+				case 1: $role = 'reader'; break;
+				case 2: $role = 'author';break;
+				case 3: $role = 'editor';break;
+				case 4: $role = 'admin';break;
+				default: $role = 'reader';
+			}
+		return $role;		
 	}
 }
