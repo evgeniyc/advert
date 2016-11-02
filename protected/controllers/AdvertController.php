@@ -30,7 +30,11 @@ class AdvertController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','admin','delete'),
+				'actions'=>array('admin'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('update','delete'),
 				'roles'=>array('author'),
 			),
 			array('deny',  // deny all users
@@ -81,6 +85,15 @@ class AdvertController extends Controller
 					$path=Yii::getPathOfAlias('webroot').'/images/uploads/'.$name;
 					$model->uphoto->saveAs($path);
 				}
+				$owner = $model->owner;
+				if($owner->role == 1)
+				{
+					$owner->role = 2;
+					$owner->save();
+					$auth = Yii::app()->authManager;
+					$auth->revoke('reader',$owner->id);
+					$auth->assign('author',$owner->id);
+				}
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -94,38 +107,43 @@ class AdvertController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		
 		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Advert']))
+		if(Yii::app()->user->checkAccess('updateOwn',array('author'=>$model->author)) || Yii::app()->user->checkAccess('update'))
 		{
-			$model->attributes=$_POST['Advert'];
-			$model->uphoto=CUploadedFile::getInstance($model,'uphoto');
-			if(!empty($model->uphoto)) $model->photo=1;
-			if($model->save())
-			{
-				if($model->uphoto)
-				{
-					$names=explode('.',$model->uphoto->name);
-					$count=count($names);
-					$count--;
-					$type=$names[$count];
-					unset($names);
-					$names[]=$id;
-					$names[]=$type;
-					$name=implode('.',$names);
-					$path=Yii::getPathOfAlias('webroot').'/images/uploads/'.$name;
-					$model->uphoto->saveAs($path);
-				}
-				$this->redirect(array('view','id'=>$model->id));
-			}
-		}
+			// Uncomment the following line if AJAX validation is needed
+			// $this->performAjaxValidation($model);
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+			if(isset($_POST['Advert']))
+			{
+				$model->attributes=$_POST['Advert'];
+				$model->uphoto=CUploadedFile::getInstance($model,'uphoto');
+				if(!empty($model->uphoto)) $model->photo=1;
+				if($model->save())
+				{
+					if($model->uphoto)
+					{
+						$names=explode('.',$model->uphoto->name);
+						$count=count($names);
+						$count--;
+						$type=$names[$count];
+						unset($names);
+						$names[]=$id;
+						$names[]=$type;
+						$name=implode('.',$names);
+						$path=Yii::getPathOfAlias('webroot').'/images/uploads/'.$name;
+						$model->uphoto->saveAs($path);
+					}
+					$this->redirect(array('view','id'=>$model->id));
+				}
+			}
+
+			$this->render('update',array(
+				'model'=>$model,
+			));
+		}
+		else throw new CHttpException(404,'Access denied.');
+		
 	}
 
 	/**
@@ -135,7 +153,9 @@ class AdvertController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model = $this->loadModel($id);
+		if(Yii::app()->user->checkAccess('updateOwn',array('author'=>$model->author)) || Yii::app()->user->checkAccess('update'))
+			$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -159,11 +179,11 @@ class AdvertController extends Controller
 	public function actionAdmin()
 	{
 		$model=new Advert('search');
-		$model->unsetAttributes();  // clear any default values
 		$model->author = Yii::app()->user->id;
+		if(Yii::app()->user->checkAccess('update'))
+			$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Advert']))
 			$model->attributes=$_GET['Advert'];
-
 		$this->render('admin',array(
 			'model'=>$model,
 		));

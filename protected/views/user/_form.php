@@ -44,17 +44,10 @@
 			'model' => $model,
 			'attribute' => 'phone',
 			'mask' => '(099)999-99-99',
-			'htmlOptions' => array('size' => 11)
+			'htmlOptions' => array('size' => 12)
 			));
 		?>
 		<?php echo $form->error($model,'phone'); ?>
-	</div>
-	
-	
-	<div class="row">
-		<?php echo $form->labelEx($model,'role'); ?>
-		<?php echo $form->dropDownList($model,'role',array(1=>'reader', 2=>'editor', 3=>'admin')); ?>
-		<?php echo $form->error($model,'role'); ?>
 	</div>
 	
 	<div class="row">

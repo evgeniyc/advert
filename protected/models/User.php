@@ -80,8 +80,6 @@ class User extends CActiveRecord
 			$this->passw=md5($this->passw);
 			$this->role=1;
 		}
-		if($this->role === 1)
-			$this->role = 2;
 		return parent::beforeSave();
 	}
 	/**

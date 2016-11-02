@@ -41,7 +41,7 @@
 					<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
 					<?php 	if(Yii::app()->user->isGuest): 
 								echo '<div id="reg">';
-								echo CHtml::link('Зарегистрироваться');
+								echo CHtml::link('Зарегистрироваться',array('user/create'));
 								echo '</div>';
 							endif;
 					?>

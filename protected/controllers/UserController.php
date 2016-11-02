@@ -69,9 +69,9 @@ class UserController extends Controller
 			if($model->save())
 			{
 				$auth = Yii::app()->authManager;
-				$role = $this->urole($model->role);
-				$auth->assign($role, $model->id);
-				$this->redirect(array('view','id'=>$model->id));
+				$auth->assign('reader', $model->id);
+				Yii::app()->user->setFlash('reg','Регистрация успешна.');
+				$this->redirect(Yii::app()->loginUrl);
 			}
 				
 		}
@@ -100,7 +100,7 @@ class UserController extends Controller
 			if($model->role != $_POST['User']['role'])
 			{
 				$auth_flag = true;
-				$role = $this->urole($model->role);
+				$role = self::urole($model->role);
 				$auth->revoke($role,$model->id);
 			}
 			
@@ -110,7 +110,7 @@ class UserController extends Controller
 			{
 				if($auth_flag)
 				{
-					$role = $this->urole($model->role);
+					$role = self::urole($model->role);
 					$auth->assign($role, $model->id);
 				}
 				$this->redirect(array('view','id'=>$model->id));
@@ -129,7 +129,12 @@ class UserController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model = $this->loadModel($id);
+		$auth = Yii::app()->authManager;
+		$role = self::urole($model->role);
+		$auth->revoke($role,$model->id);
+		$model->delete();
+		
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -189,7 +194,7 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
-	protected function urole($role)
+	public static function urole($role)
 	{
 		switch($role)
 			{

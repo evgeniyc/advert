@@ -17,6 +17,11 @@ $this->breadcrumbs=array(
 		</h3>
 	</div>
 	<div class="panel-body">
+	<?php 	if(Yii::app()->user->hasFlash('reg')): ?>
+				<div class="flash-success">
+					<?php echo Yii::app()->user->getFlash('reg'); ?>
+				</div>
+	<?php	endif; ?> 		
 		<p>Пожалуйста, заполните следующую форму с вашими учетными данными для входа:</p>
 
 <div class="form">
