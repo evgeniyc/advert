@@ -1054,3 +1054,157 @@ Stack trace:
 REQUEST_URI=/yii/advert/images/uploads/8.jpg
 HTTP_REFERER=http://localhost/yii/advert/advert/admin
 ---
+2016/11/02 08:01:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/6.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/1.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/2.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/3.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/7.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/5.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/4.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/6.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/5.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/6.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/7.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/4.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/1.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
+2016/11/02 08:01:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "uploads".' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('uploads')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('uploads')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/uploads/...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/advert/images/uploads/3.jpg
+HTTP_REFERER=http://localhost/yii/advert/advert/update/1
+---
