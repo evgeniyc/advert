@@ -40,7 +40,8 @@ class User extends CActiveRecord
 			array('email', 'length', 'max'=>24),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, login, passw, name, phone, email, reg_date, role', 'safe', 'on'=>'search'),
+			array('id, login, name, phone, email, reg_date, role', 'safe', 'on'=>'search'),
+			array('login, passw, name, phone, email', 'safe', 'on'=>'create'),
 		);
 	}
 
@@ -77,9 +78,11 @@ class User extends CActiveRecord
 		{
 			$this->reg_date=date("Y-m-d");
 			$this->passw=md5($this->passw);
-			return parent::beforeSave();
+			$this->role=1;
 		}
-			
+		if($this->role === 1)
+			$this->role = 2;
+		return parent::beforeSave();
 	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -101,7 +104,6 @@ class User extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('login',$this->login,true);
-		$criteria->compare('passw',$this->passw,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('email',$this->email,true);

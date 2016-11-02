@@ -14,7 +14,7 @@ class UserController extends Controller
 	public function filters()
 	{
 		return array(
-			//'accessControl', // perform access control for CRUD operations
+			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -27,17 +27,13 @@ class UserController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('admin','delete','index','view','update'),
+				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -71,7 +67,13 @@ class UserController extends Controller
 		{
 			$model->attributes=$_POST['User'];
 			if($model->save())
+			{
+				$auth = Yii::app()->authManager;
+				$role = $this->urole($model->role);
+				$auth->assign($role, $model->id);
 				$this->redirect(array('view','id'=>$model->id));
+			}
+				
 		}
 
 		$this->render('create',array(
@@ -93,9 +95,26 @@ class UserController extends Controller
 
 		if(isset($_POST['User']))
 		{
+			$auth = Yii::app()->authManager;
+			$auth_flag = false;
+			if($model->role != $_POST['User']['role'])
+			{
+				$auth_flag = true;
+				$role = $this->urole($model->role);
+				$auth->revoke($role,$model->id);
+			}
+			
+			
 			$model->attributes=$_POST['User'];
 			if($model->save())
+			{
+				if($auth_flag)
+				{
+					$role = $this->urole($model->role);
+					$auth->assign($role, $model->id);
+				}
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
@@ -169,5 +188,17 @@ class UserController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	protected function urole($role)
+	{
+		switch($role)
+			{
+				case 1: $role = 'reader'; break;
+				case 2: $role = 'author';break;
+				case 3: $role = 'editor';break;
+				case 4: $role = 'admin';break;
+				default: $role = 'reader';
+			}
+		return $role;		
 	}
 }

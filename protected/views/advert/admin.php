@@ -6,10 +6,10 @@ $this->breadcrumbs=array(
 	'Объявления'=>array('index'),
 	'Мой кабинет',
 );
-
+$value = 0;
 $this->menu=array(
-	array('label'=>'List Advert', 'url'=>array('index')),
-	array('label'=>'Create Advert', 'url'=>array('create')),
+	array('label'=>'Создать объявление', 'url'=>array('advert/create')),
+	array('label'=>'Добавить изобажения', 'url'=>array('index')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -43,7 +43,7 @@ $('.search-form form').submit(function(){
 				'content',
 				array(
 					'name'=>'photo',
-					'type'=>'image',
+					'type'=>'html',
 					'value'=>'CHtml::image(Yii::app()->baseUrl."/images/uploads/$data->id.jpg","Изображение",array("style"=>"width:150px"))',
 				),
 				'date',
@@ -53,6 +53,14 @@ $('.search-form form').submit(function(){
 				*/
 				array(
 					'class'=>'CButtonColumn',
+					'buttons'=>array(
+						'create' => array(
+							'label'=>'Изображение',     // text label of the button
+							'url'=>'Yii::app()->createUrl("/images/create", array("id" => $data->id))', // a PHP expression for generating the URL of the button
+							'imageUrl'=>Yii::app()->baseUrl.'/images/kran.jpg',  // image URL of the button. If not set or false, a text link is used
+						),
+					),
+					'template'=>'{view}{update}<br>{delete}{create}',
 				),
 			),
 		)); ?>

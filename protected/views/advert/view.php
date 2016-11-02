@@ -44,7 +44,7 @@ $this->menu=array(
 				<!-- 3. Enjoy! -->
 			</div>
 			<div class="col-md-6">
-				<?php echo $model->content; ?>
+				<?php echo $model->content; ?><hr>
 				<h4>Контактные данные:</h4>
 				<?php
 				$this->widget('zii.widgets.CDetailView', array(
@@ -55,6 +55,8 @@ $this->menu=array(
 						'owner.email', 
 					),
 				)); ?>
+				<div id="add_date">Объявление добавлено: <?php echo $this->datum($model->date); ?></div>
+				<div id="price">Цена: <?php echo $model->price; ?>$</div>
 			</div>
 		</div>
 	</div>

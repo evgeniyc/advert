@@ -27,7 +27,7 @@
 									data-autoplay="true"
 									data-nav="false">
 									<?php 	for($i=1; $i<11; $i++):
-												echo CHtml::image(Yii::app()->baseUrl.'/images/uploads/'.rand(1,10).'.jpg', 'Изображение');
+												echo CHtml::image(Yii::app()->baseUrl.'/images/houses/'.rand(1,10).'.jpg', 'Изображение');
 											endfor; 
 									?>
 								  <!--<img src="http://s.fotorama.io/1.jpg">
