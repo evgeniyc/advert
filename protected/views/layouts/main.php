@@ -34,17 +34,17 @@
 			<div id="header" class="row">
 				<div id="logo" class="col-md-2 col-xs-6">
 					<div id="logo-left" class="pull-left"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/logo.png','Логотип'); ?></div>
-					<div id="logo-right" class="hidden-lg"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/road.jpg','Логотип'); ?></div>
+					
 				</div>
-				<div id="gerb" class="col-md-2 col-md-push-8 col-xs-6"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/vgerb.jpg','Герб',array('width'=>'70')); ?></div>
+				<div id="gerb" class="col-md-2 col-md-push-8 col-xs-6">
+					<?php echo CHtml::image(Yii::app()->baseUrl.'/images/vgerb.jpg','Герб',array('width'=>'70')); ?>
+					<?php if(Yii::app()->user->hasFlash('welcome')): ?>
+						<div id="welcome"><?php echo Yii::app()->user->getFlash('welcome'); ?></div>
+					<?php endif; ?>
+				</div>
 				<div id="title"class="col-md-8 col-md-pull-2">
+					<?php echo CHtml::image(Yii::app()->baseUrl.'/images/back-advert3.png','Фото Вольнянск'); ?>
 					<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
-					<?php 	if(Yii::app()->user->isGuest): 
-								echo '<div id="reg">';
-								echo CHtml::link('Зарегистрироваться',array('user/create'));
-								echo '</div>';
-							endif;
-					?>
 				</div>
 			</div>
 		</header>
@@ -52,10 +52,11 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Выйти ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Мой кабинет', 'itemOptions'=>array('class'=>'drops'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
+				array('label'=>'Мой кабинет <span class="caret"></span>', 'encodeLabel'=>false, 'itemOptions'=>array('class'=>'drops'), 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
 					array('label'=>'Добавить объявление', 'url'=>array('advert/create')),
 					array('label'=>'Посетить', 'url'=>array('advert/admin')),
 				)),
+				array('label'=>'Регистрация', 'url'=>array('/user/create'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Войти', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Контакты', 'url'=>array('/site/contact')),
 				array('label'=>'О нас', 'url'=>array('/site/page', 'view'=>'about')),
@@ -85,13 +86,20 @@
 				});"
 			);
 			Yii::app()->clientScript->registerScript('drops',"
-				$(function(){
-					$('.drops').hover(function(){
-						$('.drops ul').slideToggle('slow', function() {});
-					});
-				})"
-			);
-			
+				var timeout;
+				$('.drops').hover(
+					function(){
+						timeout = setTimeout(function(){
+							$('.drops ul').slideDown('slow');},
+						100);
+					},
+					function(){
+						$('.drops ul').slideUp('slow');
+						clearTimeout(timeout);
+					}
+				);
+					
+			");
 	?>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<!-- Latest compiled and minified JavaScript -->

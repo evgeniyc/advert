@@ -35,8 +35,10 @@ class User extends CActiveRecord
 			array('login, passw', 'required', 'on'=>'login'),
 			array('role', 'numerical', 'integerOnly'=>true),
 			array('login, name', 'length', 'max'=>12),
+			array('login','unique', 'on'=>'create'),
 			array('passw', 'length', 'max'=>32),
 			array('phone', 'length', 'max'=>18),
+			array('email', 'email'),
 			array('email', 'length', 'max'=>24),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

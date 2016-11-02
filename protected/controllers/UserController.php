@@ -71,7 +71,10 @@ class UserController extends Controller
 				$auth = Yii::app()->authManager;
 				$auth->assign('reader', $model->id);
 				Yii::app()->user->setFlash('reg','Регистрация успешна.');
-				$this->redirect(Yii::app()->loginUrl);
+				if(Yii::app()->user->isGuest)
+					$this->redirect(Yii::app()->user->loginUrl);
+				else 
+					$this->render(array('view','id'=>$model->id));
 			}
 				
 		}

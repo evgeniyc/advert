@@ -55,9 +55,9 @@ $('.search-form form').submit(function(){
 					'class'=>'CButtonColumn',
 					'buttons'=>array(
 						'create' => array(
-							'label'=>'Изображение',     // text label of the button
+							'label'=>'Добавить изображения',     // text label of the button
 							'url'=>'Yii::app()->createUrl("/images/create", array("id" => $data->id))', // a PHP expression for generating the URL of the button
-							'imageUrl'=>Yii::app()->baseUrl.'/images/kran.jpg',  // image URL of the button. If not set or false, a text link is used
+							'imageUrl'=>Yii::app()->baseUrl.'/images/j.jpg',  // image URL of the button. If not set or false, a text link is used
 						),
 					),
 					'template'=>'{view}{update}<br>{delete}{create}',

@@ -22,7 +22,7 @@ $this->breadcrumbs=array(
 					<?php echo Yii::app()->user->getFlash('reg'); ?>
 				</div>
 	<?php	endif; ?> 		
-		<p>Пожалуйста, заполните следующую форму с вашими учетными данными для входа:</p>
+		<p>Пожалуйста, заполните следующую форму вашими учетными данными для входа:</p>
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
