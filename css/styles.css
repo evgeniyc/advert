@@ -23,8 +23,11 @@
 }
 #logo
 {
-	padding-left: 33px;
 	padding-top: 3px;
+}
+#middle-part
+{
+	padding-top: 10px;
 }
 #title
 {
@@ -39,13 +42,13 @@
 {
 	text-align: center;
 	margin: 0;
-	padding: 0;
+	
 	font-weight: bold;
 }
 #gerb
 {
-	text-align: right;
-	padding-right: 35px;
+	
+	
 }
 #welcome
 {

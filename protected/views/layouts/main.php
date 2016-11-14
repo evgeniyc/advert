@@ -31,21 +31,37 @@
 <body>
 	<div id="body" class="container">
 		<header>
-			<div id="header" class="row">
-				<div id="logo" class="col-md-2 col-xs-6">
-					<div id="logo-left" class="pull-left"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/logo.png','Логотип'); ?></div>
-					
+			<div id="images" class="row">
+				<div id="logo" class="col-lg-1 col-md-1 col-sm-2 col-xs-3">
+					<div id="logo-left"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/logo.png','Логотип',array('width'=>'100%','class'=>'pull-left')); ?></div>
 				</div>
-				<div id="gerb" class="col-md-2 col-md-push-8 col-xs-6">
-					<?php echo CHtml::image(Yii::app()->baseUrl.'/images/vgerb.jpg','Герб',array('width'=>'70')); ?>
-					<?php if(Yii::app()->user->hasFlash('welcome')): ?>
-						<div id="welcome"><?php echo Yii::app()->user->getFlash('welcome'); ?></div>
-					<?php endif; ?>
+				<div id="middle-part" class="col-lg-10 col-md-10 col-sm-8 col-xs-6">
+					<div class="row">
+						<?php 	$numbers = range(1,10);
+								shuffle($numbers);
+								for($i=0; $i < 6; $i++): ?>
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+								<?php echo CHtml::image(Yii::app()->baseUrl.'/images/volniansk/'.$numbers[$i].'.jpg','Фото Вольнянск',array('width'=>'100%')); ?>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
+								<?php echo CHtml::image(Yii::app()->baseUrl.'/images/volniansk/'.$numbers[++$i].'.jpg','Фото Вольнянск',array('width'=>'100%')); ?>
+							</div>
+							<div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+								<?php echo CHtml::image(Yii::app()->baseUrl.'/images/volniansk/'.$numbers[++$i].'.jpg','Фото Вольнянск',array('width'=>'100%')); ?>
+							</div>
+						<?php endfor; ?>
+					</div>
 				</div>
-				<div id="title"class="col-md-8 col-md-pull-2">
-					<?php echo CHtml::image(Yii::app()->baseUrl.'/images/back-advert3.png','Фото Вольнянск'); ?>
+				<div id="gerb" class="col-lg-1 col-md-1 col-sm-2 col-xs-3">
+					<?php echo CHtml::image(Yii::app()->baseUrl.'/images/vgerb.jpg','Герб',array('width'=>'100%','class'=>'pull-right')); ?>
+				</div>
+			</div>
+			<?php if(Yii::app()->user->hasFlash('welcome')): ?>
+				<div id="welcome" class="pull-right"><?php echo Yii::app()->user->getFlash('welcome'); ?></div>
+			<?php endif; ?>
+			<div id="title">
+					<?php //echo CHtml::image(Yii::app()->baseUrl.'/images/back-advert3.png','Фото Вольнянск'); ?>
 					<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
-				</div>
 			</div>
 		</header>
 		<div id="main-menu">

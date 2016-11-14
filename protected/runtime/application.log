@@ -1037,3 +1037,32 @@ Stack trace:
 REQUEST_URI=/yii/advert/images/uploads/19.jpg
 HTTP_REFERER=http://localhost/yii/advert/advert/admin
 ---
+2016/11/14 22:06:35 [error] [php] Invalid argument supplied for foreach() (C:\Apache2.2\htdocs\yii\advert\protected\views\layouts\main.php:42)
+Stack trace:
+#0 C:\Apache2.2\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): AdvertController->renderFile()
+#1 C:\Apache2.2\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 C:\Apache2.2\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 C:\Apache2.2\htdocs\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
+#4 C:\Apache2.2\htdocs\yii\framework\web\CBaseController.php(308): AdvertController->endWidget()
+#5 C:\Apache2.2\htdocs\yii\advert\protected\views\layouts\column2.php(51): AdvertController->endContent()
+#6 C:\Apache2.2\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\Apache2.2\htdocs\yii\framework\web\CBaseController.php(95): AdvertController->renderInternal()
+#8 C:\Apache2.2\htdocs\yii\framework\web\CController.php(784): AdvertController->renderFile()
+#9 C:\Apache2.2\htdocs\yii\advert\protected\controllers\AdvertController.php(173): AdvertController->render()
+#10 C:\Apache2.2\htdocs\yii\framework\web\actions\CInlineAction.php(49): AdvertController->actionIndex()
+#11 C:\Apache2.2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\Apache2.2\htdocs\yii\framework\web\filters\CFilterChain.php(133): AdvertController->runAction()
+#13 C:\Apache2.2\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\Apache2.2\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\Apache2.2\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AdvertController->filterAccessControl()
+#16 C:\Apache2.2\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\Apache2.2\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\Apache2.2\htdocs\yii\framework\web\CController.php(265): AdvertController->runActionWithFilters()
+#19 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(282): AdvertController->run()
+#20 C:\Apache2.2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\Apache2.2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\Apache2.2\htdocs\yii\advert\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/advert/
+in C:\Apache2.2\htdocs\yii\advert\protected\views\layouts\main.php (42)
+in C:\Apache2.2\htdocs\yii\advert\protected\views\layouts\column2.php (51)
+in C:\Apache2.2\htdocs\yii\advert\protected\controllers\AdvertController.php (173)
