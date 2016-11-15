@@ -32,19 +32,19 @@
 	<div id="body" class="container">
 		<header>
 			<div id="header" class="row">
-				<div id="logo" class="col-md-2 col-xs-6">
+				<div id="logo" class="col-lg-1">
 					<div id="logo-left" class="pull-left"><?php echo CHtml::image(Yii::app()->baseUrl.'/images/logo.png','Логотип'); ?></div>
 					
 				</div>
-				<div id="gerb" class="col-md-2 col-md-push-8 col-xs-6">
+				<div id="title"class="col-lg-10">
+					<?php //echo CHtml::image(Yii::app()->baseUrl.'/images/back-advert3.png','Фото Вольнянск'); ?>
+					<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
+				</div>
+				<div id="gerb" class="col-lg-1">
 					<?php echo CHtml::image(Yii::app()->baseUrl.'/images/vgerb.jpg','Герб',array('width'=>'70')); ?>
 					<?php if(Yii::app()->user->hasFlash('welcome')): ?>
 						<div id="welcome"><?php echo Yii::app()->user->getFlash('welcome'); ?></div>
 					<?php endif; ?>
-				</div>
-				<div id="title"class="col-md-8 col-md-pull-2">
-					<?php echo CHtml::image(Yii::app()->baseUrl.'/images/back-advert3.png','Фото Вольнянск'); ?>
-					<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
 				</div>
 			</div>
 		</header>
