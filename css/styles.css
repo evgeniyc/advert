@@ -1,0 +1,283 @@
+#body
+{
+	background: url(../images/vert.jpg) repeat-x, url(../images/horiz.jpg) repeat-y;
+	border-left: 1px dotted black;
+	border-right: 1px dotted black;
+	box-shadow: 0 0 2px black;
+	overflow: hidden;
+}
+#header
+{
+	
+}
+#reg
+{
+	position: relative;
+	float: right;
+	margin-top: -10px;
+}
+#reg a
+{
+	color: yellow;
+	text-shadow: -1px 1px 1px black;
+}
+#logo
+{
+	padding-top: 3px;
+}
+#middle-part
+{
+	padding-top: 10px;
+}
+#title
+{
+	color: #00ACFF;
+	font-style: italic;
+	text-shadow: -2px 2px 3px black;
+	text-align: center;
+	
+	
+}
+#title h1
+{
+	text-align: center;
+	margin: 0;
+	
+	font-weight: bold;
+}
+#gerb
+{
+	
+	
+}
+#welcome
+{
+	color: red;
+	text-shadow: -1px 1px 1px black;
+	font-weight: bold;
+}
+.panel-heading
+{
+	background-image: linear-gradient(to top, #7FFF00 0, white 100%) !important;
+}
+.panel-heading form
+{
+	font-size: 0.9em;
+	margin-top: -2px;
+}
+.panel-heading form input[type=text]
+{
+	border-radius: 4px;
+}
+.panel-title
+{
+	color: #48036f;
+	font-style: italic;
+	font-weight: bold;
+}
+.panel-body
+{
+	background: #e8e8e8;
+}
+nav ul
+{
+	
+}
+#main-menu ul li
+{
+	display: inline-block;
+	list-style: none;
+	float: right;
+	
+}
+#main-menu li.active > a
+{
+	color: black;
+}
+#main-menu a, #main-menu span
+{
+	margin: 5px;
+	padding: 3px 10px;
+	border: 2px ridge black;
+	border-radius: 5px;
+	box-shadow: 0 0 2px black;
+	background: linear-gradient(to top, #48036f, white);
+	color: white;
+	
+}
+#main-menu a:hover
+{
+	color: red;
+	background: linear-gradient(to bottom, #48036f, white);
+	text-decoration: none;
+	border-style: groove;
+}
+#main-menu li ul
+{
+	display: none;
+	position: absolute;
+	z-index: 2;
+	padding-left: 0;
+}
+#main-menu li ul li
+{
+	clear: both;
+	float: left;
+	margin-bottom: 10px;
+}
+#side-menu
+{
+	padding-top: 0;
+}
+section
+{
+	height: 500px;
+	overflow: visible;
+}
+#breadcrumbs a
+{
+	text-shadow: 0 0 2px white;
+}
+#search
+{
+	float: right;
+}
+.panel
+{
+	box-shadow: -1px 1px 2px black;
+}
+.advert
+{
+	width: 192px;
+	height: 250px;
+	border: 2px ridge black;
+	border-radius: 5px;
+	box-shadow: 1px -1px 2px black;
+	float: left;
+	margin: 5px;
+}
+.advert_head
+{
+	height: 20%;
+	background: linear-gradient(to top, white, #00675C);
+	color: brown;
+	text-shadow: 0 0 2px white;
+	font-weight: bold;
+	font-style: italic;
+	padding: 5px;
+}
+.advert_body
+{
+	height: 60%;
+	padding: 5px;
+	
+}
+.advert_image
+{
+	height: 100%;
+}
+.advert_text
+{
+	
+}
+.advert_footer
+{
+	height: 20%;
+	background: #FFCE73;
+	padding: 10px 5px 5px 5px;
+	color: red;
+	font-weight: bold;
+	text-align: center;
+}
+.advert-date
+{
+	color: white;
+	text-align: right;
+	text-shadow: 0 0 2px black;
+}
+#add_date
+{
+	text-align: left;
+	padding-top: 10px;
+}
+#price
+{
+	text-align: center;
+	color: red;
+	font-size: 1.1em;
+	font-weight: bold;
+	padding-top: 10px;
+}
+footer
+{
+	height: 40px;
+	text-align: center;
+	background: #9F3ED5;
+	color: white;
+	font-style: italic;
+	
+}
+ul
+{
+	padding: 10px;
+	margin: 0;
+	overflow: auto;
+	
+}
+.slicknav_menu {
+	display:none;
+}
+
+@media screen and (max-width: 40em) {
+	/* #menu is the original menu */
+	#main-menu {
+		display:none;
+	}
+	
+	.slicknav_menu {
+		display:block;
+	}
+}
+/* old styles */
+div.flash-error, div.flash-notice, div.flash-success
+{
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+
+div.flash-error
+{
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+
+div.flash-success
+{
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
+
+div.flash-error a
+{
+	color:#8a1f11;
+}
+
+div.flash-notice a
+{
+	color:#514721;
+}
+
+div.flash-success a
+{
+	color:#264409;
+}
