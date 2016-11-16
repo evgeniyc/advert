@@ -80,12 +80,13 @@
 			),
 		)); ?>
 	</div><!-- mainmenu -->
+	<div id="date">Сегодня: <?php setlocale(LC_TIME, 'ru_RU.UTF-8'); echo strftime("%d.%m.%Y, %A"); ?></div>
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
-	<div id="date">Сегодня: <?php setlocale(LC_TIME,'ru_RU'); echo strftime("%d.%m.%Y, %A"); ?></div>
+	
 	<?php echo $content; ?>
 		<footer>Бесплатные объявления Вольнянска<br>&#169;The_Webmake 2016</footer>
 	</div><!--container-->
@@ -97,7 +98,7 @@
 					$('#main-menu').slicknav({
 						label: '',
 						duration: 300,
-						prependTo:'section'
+						prependTo:'#date'
 					});
 				});"
 			);

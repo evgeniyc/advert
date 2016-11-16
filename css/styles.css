@@ -137,10 +137,11 @@ section
 #breadcrumbs a
 {
 	text-shadow: 0 0 2px white;
+	
 }
 #date
 {
-	
+	border-bottom: 1px dotted black;
 }
 #search
 {

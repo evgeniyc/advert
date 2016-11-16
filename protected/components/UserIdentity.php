@@ -8,6 +8,7 @@
 class UserIdentity extends CUserIdentity
 {
 	private $_id;
+	private $_role;
     public function authenticate()
     {
         $record=User::model()->findByAttributes(array('login'=>$this->username));
@@ -18,6 +19,14 @@ class UserIdentity extends CUserIdentity
         else
         {
             $this->_id=$record->id;
+			switch($record->role)
+			{
+				case 1: $this->_role = 'reader'; break;
+				case 2: $this->_role = 'author'; break;
+				case 3: $this->_role = 'editor'; break;
+				case 4: $this->_role = 'admin'; break;
+				default: $this->_role = 'reader';
+			}
 			$this->setState('username',$record->name);
             $this->errorCode=self::ERROR_NONE;
         }
@@ -27,5 +36,9 @@ class UserIdentity extends CUserIdentity
     public function getId()
     {
         return $this->_id;
+    }
+	public function getRole()
+    {
+        return $this->_role;
     }
 }

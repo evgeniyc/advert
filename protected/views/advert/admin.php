@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 	'Объявления'=>array('index'),
 	'Мой кабинет',
 );
-$value = 0;
+
 $this->menu=array(
 	array('label'=>'Создать объявление', 'url'=>array('advert/create')),
 	array('label'=>'Добавить изобажения', 'url'=>array('index')),
@@ -44,6 +44,7 @@ $('.search-form form').submit(function(){
 				'content',
 				array(
 					'name'=>'photo',
+					'header'=>'Фото',
 					'type'=>'html',
 					'value'=>'CHtml::image(Yii::app()->baseUrl."/images/uploads/$data->id.jpg","Изображение",array("style"=>"width:150px"))',
 				),
