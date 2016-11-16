@@ -10,6 +10,7 @@ $value = 0;
 $this->menu=array(
 	array('label'=>'Создать объявление', 'url'=>array('advert/create')),
 	array('label'=>'Добавить изобажения', 'url'=>array('index')),
+	array('label'=>'Управление пользователями', 'url'=>array('user/admin')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
