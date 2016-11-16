@@ -168,6 +168,7 @@ class AdvertController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Advert');
+		//$dataProvider->setPagination(array('pageSize'=>2));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
