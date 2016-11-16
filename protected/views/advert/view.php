@@ -44,7 +44,7 @@ $this->menu=array(
 				<!-- 3. Enjoy! -->
 			</div>
 			<div class="col-md-6">
-				<?php echo $model->content; ?><hr>
+				<p id="single-content"><?php echo $model->content; ?></p><hr>
 				<h4>Контактные данные:</h4>
 				<?php
 				$this->widget('zii.widgets.CDetailView', array(

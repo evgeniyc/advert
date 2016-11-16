@@ -138,6 +138,10 @@ section
 {
 	text-shadow: 0 0 2px white;
 }
+#date
+{
+	
+}
 #search
 {
 	float: right;
@@ -194,6 +198,10 @@ section
 	color: white;
 	text-align: right;
 	text-shadow: 0 0 2px black;
+}
+#single-content
+{
+	border: 1px dotted white;
 }
 #add_date
 {
