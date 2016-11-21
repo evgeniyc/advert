@@ -2,6 +2,11 @@
 
 class AdvertController extends Controller
 {
+	public function init()
+	{
+		$this->menu = Category::createMenu();
+	}
+	
 	/**
 	 * @return array action filters
 	 */
@@ -165,12 +170,18 @@ class AdvertController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex($id=1)
 	{
-		$dataProvider=new CActiveDataProvider('Advert');
+		$dataProvider=new CActiveDataProvider('Advert',array(
+			'criteria' => array(
+				'condition' => 'category='.$id,
+				),
+		));
+		$name = Category::model()->findByPk($id)->name;
 		//$dataProvider->setPagination(array('pageSize'=>2));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'name'=>$name,
 		));
 	}
 

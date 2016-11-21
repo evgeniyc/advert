@@ -6,7 +6,7 @@
 	box-shadow: 0 0 2px black;
 	overflow: hidden;
 }
-#header
+#header 
 {
 	
 }
@@ -24,6 +24,14 @@
 #logo
 {
 	padding-top: 3px;
+}
+#logo img
+{
+	max-width: 70px;
+}
+header img
+{
+	min-width: 50px;
 }
 #middle-part
 {
@@ -49,6 +57,10 @@
 {
 	
 	
+}
+#gerb img
+{
+	max-width: 70px;
 }
 #welcome
 {
@@ -129,6 +141,10 @@ nav ul
 {
 	padding-top: 0;
 }
+#side-menu .active a
+{
+	color: red;
+}
 section
 {
 	height: 500px;
@@ -146,6 +162,23 @@ section
 #search
 {
 	float: right;
+}
+.cat
+{
+	width: 192px;
+	float: left;
+	padding: 10px;
+	border: 1px solid black;
+	margin: 10px;
+	box-shadow: 0 0 3px black;
+}
+.cat-name
+{
+	font-size: 1.1em;
+	font-weight: bold;
+	color: green;
+	text-align: center;
+	padding-top: 8px;
 }
 .panel
 {

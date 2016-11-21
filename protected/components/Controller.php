@@ -20,4 +20,20 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+	
+	public function dayofweek()
+	{
+		$day='';
+		switch(date('l'))
+		{
+			case 'Sunday': $day = 'Воскресенье';break;
+			case 'Monday': $day = 'Понедельник';break;
+			case 'Tuesday': $day = 'Вторник';break;
+			case 'Wednesday': $day = 'Среда';break;
+			case 'Thursday': $day = 'Четверг';break;
+			case 'Friday': $day = 'Пятница';break;
+			case 'Saturday': $day = 'Суббота';break;
+		}
+		return $day;
+	}
 }

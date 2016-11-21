@@ -2,17 +2,8 @@
 /* @var $this AdvertController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->menu = array(
-		array('label'=>'Недвижимость', 'url'=>array('/site/index')),
-		array('label'=>'Электроника', 'url'=>array('/site/index')),
-		array('label'=>'Техника', 'url'=>array('/site/index')),
-		array('label'=>'Общие объявления', 'url'=>array('/site/index')),
-		array('label'=>'Организационные', 'url'=>array('/site/index')),
-		array('label'=>'Реклама', 'url'=>array('/site/index')),
-		array('label'=>'События', 'url'=>array('/site/index')),
-		array('label'=>'Общая информация', 'url'=>array('/site/index')),
-		array('label'=>'Галерея', 'url'=>array('/site/index')),
-	);
+$this->pageTitle=Yii::app()->name . ' - Объявления';
+$this->breadcrumbs = array('Объявления, категория "'.$name.'"');
 ?>
 
 <div class="panel panel-primary">
@@ -23,6 +14,7 @@ $this->menu = array(
 		</h3>
 	</div>
 	<div class="panel-body">
+		<div id="advert-header"><h2>Раздел: "<?php echo $name; ?>"</h2></div>
 		<?php $this->widget('zii.widgets.CListView', array(
 			'dataProvider'=>$dataProvider,
 			'itemView'=>'_view',

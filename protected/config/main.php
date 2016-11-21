@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Сайт бесплатных объявлений г.Вольнянск',
 	'language'=>'ru',
-	'defaultController'=>'advert',
+	'defaultController'=>'site',
 	
 	// preloading 'log' component
 	'preload'=>array('log'),

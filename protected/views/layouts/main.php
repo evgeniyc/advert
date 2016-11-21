@@ -76,11 +76,11 @@
 				array('label'=>'Войти', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Контакты', 'url'=>array('/site/contact')),
 				array('label'=>'О нас', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Главная', 'url'=>array('/advert/index')),
+				array('label'=>'Главная', 'url'=>array('site/index')),
 			),
 		)); ?>
 	</div><!-- mainmenu -->
-	<div id="date">Сегодня: <?php setlocale(LC_TIME, 'ru_RU.UTF-8'); echo strftime("%d.%m.%Y, %A"); ?></div>
+	<div id="date">Сегодня: <?php echo date('d.m.Y, '); echo $this->dayofweek(); ?></div>
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -88,7 +88,7 @@
 	<?php endif?>
 	
 	<?php echo $content; ?>
-		<footer>Бесплатные объявления Вольнянска<br>&#169;The_Webmake 2016</footer>
+		<footer>Бесплатные объявления Вольнянска<br>&#169;<?php echo CHtml::link('The_Webmake 2016','http://webmake.hol.es',array('style'=>'color:blue')); ?></footer>
 	</div><!--container-->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

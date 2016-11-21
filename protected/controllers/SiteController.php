@@ -2,17 +2,11 @@
 
 class SiteController extends Controller
 {
-	public $menu = array(
-		array('label'=>'Недвижимость', 'url'=>array('/site/index')),
-		array('label'=>'Электроника', 'url'=>array('/site/index')),
-		array('label'=>'Техника', 'url'=>array('/site/index')),
-		array('label'=>'Общие объявления', 'url'=>array('/site/index')),
-		array('label'=>'Организационные', 'url'=>array('/site/index')),
-		array('label'=>'Реклама', 'url'=>array('/site/index')),
-		array('label'=>'События', 'url'=>array('/site/index')),
-		array('label'=>'Общая информация', 'url'=>array('/site/index')),
-		array('label'=>'Галерея', 'url'=>array('/site/index')),
-	);
+	public function init()
+	{
+		$this->menu = Category::createMenu();
+		return parent::init();
+	}
 	/**
 	 * Declares class-based actions.
 	 */
@@ -40,7 +34,8 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$data = Category::model()->findAll();
+		$this->render('index',array('data'=>$data));
 	}
 
 	/**
@@ -118,9 +113,5 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-	/*
-	public function actionAuth()
-	{
-		$this->render('auth');
-	}*/
+	
 }

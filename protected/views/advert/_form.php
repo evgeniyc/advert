@@ -2,6 +2,10 @@
 /* @var $this AdvertController */
 /* @var $model Advert */
 /* @var $form CActiveForm */
+
+//Создаем массив для списка категорий
+$data = Category::model()->findAll();
+$categories = CHtml::listData($data,'id',CHtml::encode('name'));
 ?>
 
 <div class="form">
@@ -46,7 +50,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'category'); ?>
-		<?php echo $form->DropDownList($model,'category',array(1=>'Недвижимость',2=>'Техника')); ?>
+		<?php echo $form->DropDownList($model,'category', $categories); ?>
 		<?php echo $form->error($model,'category'); ?>
 	</div>
 

@@ -91,4 +91,15 @@ class Category extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public static function createMenu()
+	{
+		$data = self::model()->findAll();
+		$menu = array();
+		foreach($data as $category)
+		{
+			$menu[] = array('label'=>$category->name, 'url'=>array('advert/index','id'=>$category->id));
+		}
+		return $menu;
+	}
 }

@@ -56,6 +56,7 @@ class Advert extends CActiveRecord
 		return array(
 			 'owner'=>array(self::BELONGS_TO, 'User', 'author'),
 			 'imgs'=>array(self::HAS_MANY, 'Images', 'advert_id'),
+			 'cat'=>array(self::HAS_ONE, 'Category', 'category'),
 		);
 	}
 

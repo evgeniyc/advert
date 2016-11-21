@@ -1,5 +1,5 @@
 <?php
-$auth=Yii::app()->authManager;
+/*$auth=Yii::app()->authManager;
  
 $auth->createOperation('create','create a post');
 $auth->createOperation('read','read a post');
@@ -25,4 +25,4 @@ $role->addChild('update');
 $role=$auth->createRole('admin');
 $role->addChild('editor');
 $role->addChild('author');
-$role->addChild('delete');
+$role->addChild('delete');*/

@@ -7,10 +7,19 @@ $this->breadcrumbs=array(
 	'Создать',
 );
 
-$this->menu=array(
+if(Yii::app()->user->checkAccess('admin'))
+{
+	$this->menu=array(
 	array('label'=>'List User', 'url'=>array('index')),
 	array('label'=>'Manage User', 'url'=>array('admin')),
-);
+	);
+}
+else
+{
+	$this->menu = Category::createMenu();	
+}
+
+
 ?>
 
 <div class="panel panel-primary">

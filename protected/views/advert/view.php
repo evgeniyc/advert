@@ -2,19 +2,13 @@
 /* @var $this AdvertController */
 /* @var $model Advert */
 
+$this->pageTitle=Yii::app()->name . ' - Просмотреть объявление';
 $this->breadcrumbs=array(
-	'Объявления'=>array('index'),
+	'Объявления'=>array('index','id'=>1),
 	$model->title,
 );
-
-$this->menu=array(
-	array('label'=>'List Advert', 'url'=>array('index')),
-	array('label'=>'Create Advert', 'url'=>array('create')),
-	array('label'=>'Update Advert', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Advert', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Advert', 'url'=>array('admin')),
-);
 ?>
+
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		<h3 class="panel-title">

@@ -2,14 +2,10 @@
 /* @var $this AdvertController */
 /* @var $model Advert */
 
+$this->pageTitle=Yii::app()->name . ' - Создать объявление';
 $this->breadcrumbs=array(
-	'Объявления'=>array('index'),
+	'Объявления'=>array('index','id'=>1),
 	'Создать',
-);
-
-$this->menu=array(
-	array('label'=>'List Advert', 'url'=>array('index')),
-	array('label'=>'Manage Advert', 'url'=>array('admin')),
 );
 ?>
 <div class="panel panel-primary">
