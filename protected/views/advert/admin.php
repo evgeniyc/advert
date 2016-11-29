@@ -25,6 +25,7 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+$this->panelTitle = 'Мой кабинет (пользователь - '.Yii::app()->user->name.'):';
 ?>
 <div class="panel panel-primary">
 	<div class="panel-heading">

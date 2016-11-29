@@ -14,8 +14,6 @@ $this->menu=array(
 	array('label'=>'View User', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage User', 'url'=>array('admin')),
 );
-?>
+$this->panelTitle = 'Обновление данных пользователя №'.$model->id;
 
-<h1>Update User <?php echo $model->id; ?></h1>
-
-<?php $this->renderPartial('_form1', array('model'=>$model)); ?>
+$this->renderPartial('_form1', array('model'=>$model));

@@ -4,7 +4,17 @@
 		<section>
 			<article>
 				<div id="content">
-					<?php echo $content; ?>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<?php echo $this->panelTitle; ?>
+								<form id="search" name="search"><input type="text" size=25><input type="submit" value="Поиск"></form>
+							</h3>
+						</div>
+						<div class="panel-body">
+							<?php echo $content; ?>
+						</div>
+					</div>
 				</div><!-- content -->
 			</article>
 		</section>

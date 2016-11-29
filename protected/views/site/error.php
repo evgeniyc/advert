@@ -6,6 +6,7 @@ $this->pageTitle=Yii::app()->name . ' - Error';
 $this->breadcrumbs=array(
 	'Error',
 );
+$this->panelTitle = 'Ошибка:';
 ?>
 
 <h2>Error <?php echo $code; ?></h2>

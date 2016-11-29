@@ -7,8 +7,9 @@ $this->breadcrumbs=array(
 	'Объявления'=>array('index','id'=>1),
 	'Обновить',
 );
+$this->panelTitle = 'Объявление номер '.$model->id;
 ?>
 
-<h1>Update Advert <?php echo $model->id; ?></h1>
+<h3>Редактирование объявления</h3>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

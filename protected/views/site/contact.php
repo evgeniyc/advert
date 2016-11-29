@@ -7,17 +7,9 @@ $this->pageTitle=Yii::app()->name . ' - Связаться с нами';
 $this->breadcrumbs=array(
 	'Контакты',
 );
+$this->panelTitle = 'Контакты:';
 ?>
-
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<h3 class="panel-title">
-			Контакты:
-			<form id="search" name="search"><input type="text" size=25><input type="submit" value="Поиск"></form>
-		</h3>
-	</div>
-	<div class="panel-body">
-		<?php if(Yii::app()->user->hasFlash('contact')): ?>
+<?php if(Yii::app()->user->hasFlash('contact')): ?>
 
 <div class="flash-success">
 	<?php echo Yii::app()->user->getFlash('contact'); ?>
@@ -57,7 +49,7 @@ $this->breadcrumbs=array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'subject'); ?>
-		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->textField($model,'subject',array('size'=>53,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'subject'); ?>
 	</div>
 
@@ -87,8 +79,6 @@ $this->breadcrumbs=array(
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-
 <?php endif; ?>
-	</div>
-</div>
+	
 

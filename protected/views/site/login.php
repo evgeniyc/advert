@@ -7,23 +7,15 @@ $this->pageTitle=Yii::app()->name . ' - Страница входа';
 $this->breadcrumbs=array(
 	'Войти',
 );
+$this->panelTitle = 'Страница входа:';
 ?>
 
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<h3 class="panel-title">
-			Страница входа:
-			<form id="search" name="search"><input type="text" size=25><input type="submit" value="Поиск"></form>
-		</h3>
-	</div>
-	<div class="panel-body">
-	<?php 	if(Yii::app()->user->hasFlash('reg')): ?>
-				<div class="flash-success">
-					<?php echo Yii::app()->user->getFlash('reg'); ?>
-				</div>
-	<?php	endif; ?> 		
-		<p>Пожалуйста, заполните следующую форму вашими учетными данными для входа:</p>
-
+<?php 	if(Yii::app()->user->hasFlash('reg')): ?>
+			<div class="flash-success">
+				<?php echo Yii::app()->user->getFlash('reg'); ?>
+			</div>
+<?php	endif; ?> 		
+	<p>Пожалуйста, заполните следующую форму вашими учетными данными для входа:</p>
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
@@ -62,6 +54,3 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
-
-	</div>
-</div>

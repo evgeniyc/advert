@@ -18,19 +18,7 @@ else
 {
 	$this->menu = Category::createMenu();	
 }
+$this->panelTitle = 'Регистрация пользователя:';
 
-
-?>
-
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<h3 class="panel-title">
-			Регистрация пользователя:
-			<form id="search" name="search"><input type="text" size=25><input type="submit" value="Поиск"></form>
-		</h3>
-	</div>
-	<div class="panel-body">
-		<?php $this->renderPartial('_form', array('model'=>$model)); ?>
-	</div>
-</div>
+$this->renderPartial('_form', array('model'=>$model)); ?>
 
