@@ -1770,3 +1770,21 @@ REQUEST_URI=/yii/advert/advert/index/3
 in C:\Apache2.2\htdocs\yii\advert\protected\views\layouts\column2.php (16)
 in C:\Apache2.2\htdocs\yii\advert\protected\controllers\AdvertController.php (180)
 in C:\Apache2.2\htdocs\yii\advert\index.php (13)
+2016/11/22 15:24:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\wamp\www\yii\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\wamp\www\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\wamp\www\yii\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\wamp\www\yii\framework\base\CApplication.php(459): CModule->getComponent('db')
+#4 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(670): CActiveRecord->getDbConnection()
+#6 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1474): CActiveRecord->getCommandBuilder()
+#7 C:\wamp\www\yii\advert\protected\models\Category.php(97): CActiveRecord->findAll()
+#8 C:\wamp\www\yii\advert\protected\controllers\SiteController.php(7): Category::createMenu()
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(281): SiteController->init()
+#10 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#11 C:\wamp\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\wamp\www\yii\advert\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/yii/advert/
+---

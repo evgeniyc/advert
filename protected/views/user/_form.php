@@ -18,48 +18,65 @@
 	<p class="note">Поля помеченные <span class="required">*</span> заполнить обязательно.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'login'); ?>
-		<?php echo $form->textField($model,'login',array('size'=>12,'maxlength'=>12)); ?>
-		<?php echo $form->error($model,'login'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'passw'); ?>
-		<?php echo $form->textField($model,'passw',array('size'=>32,'maxlength'=>32)); ?>
-		<?php echo $form->error($model,'passw'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>12,'maxlength'=>12)); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'phone'); ?>
-		<?php
-			$this->widget('CMaskedTextField', array(
-			'model' => $model,
-			'attribute' => 'phone',
-			'mask' => '(099)999-99-99',
-			'htmlOptions' => array('size' => 12)
-			));
-		?>
-		<?php echo $form->error($model,'phone'); ?>
-	</div>
+<table>
+	<tr>
+		<td>
+			<div class="row">
+				<?php echo $form->labelEx($model,'login'); ?>
+				<?php echo $form->textField($model,'login',array('size'=>12,'maxlength'=>12)); ?>
+				<?php echo $form->error($model,'login'); ?>
+			</div>
+		</td>
+		<td>
+			<div class="row">
+				<?php echo $form->labelEx($model,'passw'); ?>
+				<?php echo $form->textField($model,'passw',array('size'=>32,'maxlength'=>32)); ?>
+				<?php echo $form->error($model,'passw'); ?>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="row">
+				<?php echo $form->labelEx($model,'name'); ?>
+				<?php echo $form->textField($model,'name',array('size'=>12,'maxlength'=>12)); ?>
+				<?php echo $form->error($model,'name'); ?>
+			</div>
+		</td>
+		<td>
+			<div class="row">
+				<?php echo $form->labelEx($model,'phone'); ?>
+				<?php
+					$this->widget('CMaskedTextField', array(
+					'model' => $model,
+					'attribute' => 'phone',
+					'mask' => '(099)999-99-99',
+					'htmlOptions' => array('size' => 12)
+					));
+				?>
+				<?php echo $form->error($model,'phone'); ?>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="row">
+				<?php echo $form->labelEx($model,'email'); ?>
+				<?php echo $form->textField($model,'email',array('size'=>24,'maxlength'=>24)); ?>
+				<?php echo $form->error($model,'email'); ?>
+			</div>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>
+			<div class="row buttons">
+				<?php echo CHtml::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить'); ?>
+			</div>
+		</td>
+		<td></td>
+	</tr>
+</table>
 	
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>24,'maxlength'=>24)); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить'); ?>
-	</div>
-
 <?php $this->endWidget(); ?>
-
 </div><!-- form -->
