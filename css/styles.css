@@ -235,7 +235,9 @@ section
 }
 #single-content
 {
-	border: 1px dotted white;
+	border: 1px dotted black;
+	padding: 5px;
+	background: #D7FFB0;
 }
 #add_date
 {
@@ -322,4 +324,8 @@ div.flash-notice a
 div.flash-success a
 {
 	color:#264409;
+}
+.category-grid
+{
+	
 }

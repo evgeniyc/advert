@@ -18,7 +18,8 @@
 	<?php 	Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/styles.css');
 			Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/form.css');
 			Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/print.css','print');
-			Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/assets/plugins/slicknav/slicknav.css'); ?>
+			Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/assets/plugins/slicknav/slicknav.css');
+	?>
 	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -117,6 +118,7 @@
 				);
 					
 			");
+			
 	?>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<!-- Latest compiled and minified JavaScript -->
