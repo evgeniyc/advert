@@ -10,7 +10,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/assets/plugin
 				$(function(){
 					$('.category-grid').jMosaic({
 						items_type: 'li',
-						 min_row_height: 200,
+						 min_row_height: 210,
 						
 						});
 				});"
