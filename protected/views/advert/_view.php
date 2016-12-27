@@ -2,7 +2,6 @@
 /* @var $this AdvertController */
 /* @var $data Advert */
 ?>
-<li>
 <a href="<?php echo $this->createUrl('advert/view',array('id'=>$data->id)); ?>">
 	<div class="advert">
 		<div class="advert_head"><?php echo $data->title; ?></div>
@@ -22,4 +21,3 @@
 		</div>
 	</div>
 </a>
-</li>
